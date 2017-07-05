@@ -9,4 +9,11 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+puts "What store are you going to visit?"
+store = gets.chomp
+@user = Store.create(name: store,)
+if @user.errors.any? 
+    @user.errors.each do |attribute, message|
+      puts "Errors: #{attribute} #{message}"
+end
+end
